@@ -1,3 +1,7 @@
+# Project Cipher — Flight Simulation
+# Author: Reajul Jannat
+# Goal: Model rocket flight dynamics (drag, thrust, gravity)
+
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
