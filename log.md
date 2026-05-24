@@ -16,7 +16,6 @@
 - Notes: Initial simulation with nominal dimensions, mass will be updated once rocket is under construction 
 
 ### Python Simulation — Version 1
-- Set up Python environment, installed numpy matplotlib scipy pandas
 - Created flight_sim.py with basic physics model from scratch
 - Implemented thrust, gravity, and drag forces using Newton's second law
 - Used simplified hardcoded thrust curve for H128W (approximate values)
