@@ -1,15 +1,9 @@
-# Project Cipher — Flight Simulation
-# Author: Reajul Jannat
-# Goal: Model rocket flight dynamics (drag, thrust, gravity)
-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
 
 # rocket properties
 mass_dry = 0.555
-mass_motor = 0.202
-mass_total = mass_dry + mass_motor
 
 diameter = 0.0668
 radius = diameter / 2
@@ -19,13 +13,35 @@ Cd = 0.6
 rho = 1.225
 g = 9.81
 
-# simplified thrust curve for aerotech H128W
-thrust_time  = [0.0, 0.05, 0.2, 0.5, 0.8, 1.0, 1.2, 1.21]
-thrust_force = [0.0, 200,  140, 128, 128, 120,  50,  0.0]
+# load real thrust curve from .eng file
+def load_eng_file(filepath):
+    times = []
+    forces = []
+    prop_mass_eng = None
+    motor_mass_eng = None
+    with open(filepath, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if line.startswith(';') or line == '':
+                continue
+            parts = line.split()
+            if len(parts) == 7:
+                prop_mass_eng = float(parts[4])
+                motor_mass_eng = float(parts[5])
+                continue
+            if len(parts) == 2:
+                times.append(float(parts[0]))
+                forces.append(float(parts[1]))
+    return np.array(times), np.array(forces), prop_mass_eng, motor_mass_eng
+
+thrust_time, thrust_force, prop_mass, mass_motor = load_eng_file('H128W.eng')
+burn_time = thrust_time[-1]
+mass_total = mass_dry + mass_motor
 
 def thrust(t):
     return np.interp(t, thrust_time, thrust_force)
 
+# bug: still using hardcoded prop mass and burn time, need to fix
 def mass(t):
     burn_time = 1.2
     prop_mass = 0.095
@@ -84,5 +100,5 @@ ax2.legend()
 ax2.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('../../analysis/python_simulation.png', dpi=150, bbox_inches='tight')
+plt.savefig('/Users/reajuljannat/project-cipher/analysis/python_simulation_v2.png', dpi=150, bbox_inches='tight')
 plt.show()
