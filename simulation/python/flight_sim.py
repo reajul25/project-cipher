@@ -13,7 +13,6 @@ Cd = 0.6
 rho = 1.225
 g = 9.81
 
-# load real thrust curve from .eng file
 def load_eng_file(filepath):
     times = []
     forces = []
@@ -41,10 +40,7 @@ mass_total = mass_dry + mass_motor
 def thrust(t):
     return np.interp(t, thrust_time, thrust_force)
 
-# bug: still using hardcoded prop mass and burn time, need to fix
 def mass(t):
-    burn_time = 1.2
-    prop_mass = 0.095
     if t < burn_time:
         return mass_total - (prop_mass * t / burn_time)
     else:
@@ -100,5 +96,5 @@ ax2.legend()
 ax2.grid(True, alpha=0.3)
 
 plt.tight_layout()
-plt.savefig('/Users/reajuljannat/project-cipher/analysis/python_simulation_v2.png', dpi=150, bbox_inches='tight')
+plt.savefig('../../analysis/python_simulation_v3.png', dpi=150, bbox_inches='tight')
 plt.show()
