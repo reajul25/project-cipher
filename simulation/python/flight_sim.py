@@ -9,7 +9,7 @@ diameter = 0.0668
 radius = diameter / 2
 area = np.pi * radius**2
 
-Cd = 0.6
+Cd = 0.75
 rho = 1.225
 g = 9.81
 
