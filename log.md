@@ -37,3 +37,14 @@
   - Max velocity: 200.6 m/s (Mach 0.585)
 - Velocity now much closer to OpenRocket (200.6 vs 196 m/s)
 - Apogee higher than OpenRocket (695 vs 626m) — likely due to Cd = 0.6 being too low
+
+### OpenRocket Model Update
+- Found official LOC Precision RockSim file (.RKT) on product page
+- Extracted exact manufacturer dimensions and updated all components
+- Key corrections: nosecone length 13.97→22.86cm, fin root chord 14→12.7cm,
+  fin sweep 8.89→3.696cm, motor mount length 30.48→25.4cm
+- Updated simulation results:
+  - Apogee: 614m (2014 ft)
+  - Max velocity: 201 m/s (Mach 0.592)
+  - Max acceleration: 251 m/s²
+  - Stability: 3.13 cal / 16.6%
