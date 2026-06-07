@@ -48,3 +48,18 @@
   - Max velocity: 201 m/s (Mach 0.592)
   - Max acceleration: 251 m/s²
   - Stability: 3.13 cal / 16.6%
+
+
+## Week 4
+
+### Rocket Build
+- Dry fit all parts to verify fit before any epoxy
+- Sanded all mating surfaces with 120 grit for better epoxy adhesion
+- Marked fin alignment on booster tube
+- Slid centering rings onto 38mm motor mount tube
+- Positioned front and aft centering rings
+- Motor mount assembly in progress — epoxy cure underway
+
+### CAD
+- Started SolidWorks model of rocket geometry for SimScale CFD import
+- Modeling nosecone, body tubes, and fins using exact manufacturer dimensions
