@@ -137,3 +137,35 @@ Rocket drag has two big components: pressure drag (air pushing against the nose 
   comes from stuff my sim doesn't have — no launch lug, no rail buttons,
   incompressible only (real peak is Mach 0.59), and no surface roughness
 - Good place to stop and get back to the physical build
+
+## August 2026
+
+### Rocket Build
+- Airframe fabrication done. Motor mount, fins, recovery, rail buttons all in.
+  Just needs paint
+- Recurring problem I ran into during build was that parts were often too big for each other and without
+  proper sanding, they would get stuck
+
+### Eggtimer ION
+- About 90% assembled. Most components are on the board, a few left to go
+- Will log altitude and velocity at 20 Hz for the post-flight comparison
+
+## September 2026
+
+### Motor Situation
+
+### Motor Situation
+
+Got in touch with a certifying mentor through TMRC and a few things I didn't consider earlier may be causing some delay:
+
+- The H128W I'd been simulating is a 29mm motor and the Hi-Tech H45 has a 38mm
+  mount, so it needs an adapter
+- It's a reload, so it also needs a separate 29/180 casing I don't own
+- The stock 14-second delay would need drilling down. My sim puts apogee around
+  10s, so firing at 14 would be well past apogee
+
+### Next Up
+- Sort out the motor situation
+- Finish the ION and paint the airframe
+- Design and print the electronics sled
+- Cert flight this fall
